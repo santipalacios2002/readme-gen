@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const utility = require('./utils/generateMarkdown.js');
+module.exports = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -34,11 +34,13 @@ const questions = [
         type: 'input',
         message: 'What command should be run to install dependencies?',
         name: 'installCmd',
+        default: 'npm i',
     },
     {
         type: 'input',
         message: 'What command should be run to run tests?',
         name: 'testCmd',
+        default: 'npm test',
     },
     {
         type: 'input',
@@ -59,7 +61,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions).then((answers) => {                        //then add this to the html code as a string with template literals
+    inquirer.prompt(questions).then((answers) => {          
         console.log('answers:', answers)
         writeToFile('readme.md', answers)
     });
