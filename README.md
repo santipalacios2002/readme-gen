@@ -1,5 +1,4 @@
-
-    # README Generator
+# README Generator
 
     ![MIT](https://img.shields.io/badge/license-MIT-brightgreen)
     
