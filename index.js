@@ -1,8 +1,8 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-module.exports = require('./utils/generateMarkdown.js');
-
+const generateMarkdown = require('./utils/generateMarkdown.js');
+generateMarkdown('testing');
 // TODO: Create an array of questions for user input
 const questions = [
     {
@@ -56,57 +56,57 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
+    
     //deconstructing the data
 
-    const {gitUsername, email, projectName, description, license, installCmd, testCmd, repoUsage, repoContrib} = data
+    const { gitUsername, email, projectName, description, license, installCmd, testCmd, repoUsage, repoContrib } = data
     console.log('data!!!!!!!!!!!!!!!!!!!!!!!!!!!:', data)
     console.log('gitUsername:', gitUsername)
-    let readmeContent = `
-    # ${projectName}
+    let readmeContent = `# ${projectName}
 
-    ![${license}](https://img.shields.io/badge/license-${license}-brightgreen)
+![${license}](https://img.shields.io/badge/license-${license}-brightgreen)
     
-    ## Description
+## Description
     
-    ${description}
+${description}
     
-    ## Table of Contents
+## Table of Contents
     
-    * [Installation](##Installation)
-    * [Usage](##Usage)
-    * [License](##License)
-    * [Contributing](##Contributing)
-    * [Tests](##Test)
-    * [Questions](##Questions)
+* [Installation](##Installation)
+* [Usage](##Usage)
+* [License](##License)
+* [Contributing](##Contributing)
+* [Tests](##Test)
+* [Questions](##Questions)
     
-    ## Installation
+## Installation
     
-    To install the necessary dependencies, run the following command:
+To install the necessary dependencies, run the following command:
     
-    \`\`\`
-    ${installCmd}
-    \`\`\`
+\`\`\`
+${installCmd}
+\`\`\`
     
-    ## Usage
+## Usage
     
-    ${repoUsage}
+${repoUsage}
     
-    ## License
+## License
     
-    This project is licensed under the "${license} license.
+This project is licensed under the "${license} license.
     
-    ## Contributing
+## Contributing
     
-    ${repoContrib}
+${repoContrib}
     
-    ## Test
+## Test
     
-    \`\`\`
-    ${testCmd}
-    \`\`\`
-    ## Questions
+\`\`\`
+${testCmd}
+\`\`\`
+## Questions
     
-    If you have any questions about the repo, open an issue or contact me directly at ${email}. You can find more of my work at [${gitUsername}](https://github.com/${gitUsername})
+If you have any questions about the repo, open an issue or contact me directly at ${email}. You can find more of my work at [${gitUsername}](https://github.com/${gitUsername})
     `
     fs.writeFile(fileName, readmeContent, (err) => err ? console.log(err) : console.log('file created'))
 }
