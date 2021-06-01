@@ -1,6 +1,7 @@
 # PROJECT TITLE HERE
 
-![MIT](https://img.shields.io/badge/license-ICS-brightgreen)
+[![MIT](https://img.shields.io/badge/license-ICS-brightgreen)](https://opensource.org/licenses/MIT)
+
 
 ## Description
 
