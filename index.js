@@ -62,7 +62,7 @@ const writeToFile = (fileName, data) => {    //transformed to es6 syntax
 }
 
 // TODO: Create a function to initialize app
-const init = () => inquirer.prompt(questions).then((answers) => writeToFile('README.md', answers));  //transformed to es6 syntax
+const init = () => inquirer.prompt(questions).then((answers) => writeToFile('./output/README.md', answers));  //transformed to es6 syntax
 
 // Function call to initialize app
 init();

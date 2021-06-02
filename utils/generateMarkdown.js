@@ -1,7 +1,6 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  // const licenseUpper = license;
   const licenseBadge = license != '' ? `https://img.shields.io/badge/license-${license.toUpperCase()}-brightgreen` : '';
   return licenseBadge;
 }
@@ -16,7 +15,6 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
-  // const licenseUpper = license;
   const licenseSection = license != '' ? `## License\nThis project is licensed under the ${license.toUpperCase()} license.` : '';
   return licenseSection;
 }
@@ -28,9 +26,7 @@ function generateMarkdown(data) {
       //generating license via functions
       const licensePassed = renderLicenseBadge(license)  
       const licenseLink = renderLicenseLink(license);
-      const licenseSection = renderLicenseSection(license);
-      console.log('licensePassed:', licensePassed)  
-  
+      const licenseSection = renderLicenseSection(license);  
       let readmeContent = `# ${projectName}
   
 ![${license}](${licensePassed})
